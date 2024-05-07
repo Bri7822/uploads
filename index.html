@@ -20,14 +20,14 @@
         let viewer = document.getElementById('portrayer');
         let fileName = document.getElementById("file");
         let extension = ["csv","xlsx","xlsm","xlsb","xltx","xltm","xls","xlt","xls","xml","xml","xlam","xla","xlw","xlr"];
-        let userExtension = fileName.lastIndexOf('.');
+        let userExtension = getFileExtension(fileName);
         for(let i= 1; i <= extension.length; i++)
         {
             if(userExtension == extension)
             {
-                viewer.textContent = "Correct";
+                viewer.textContent = "Correct " + userExtension;
             }else{
-                viewer.textContent = "incorrect";
+                viewer.textContent = "incorrect "  + userExtension;
             }
         }
     }
