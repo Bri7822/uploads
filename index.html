@@ -21,15 +21,22 @@
         let fileName = document.getElementById("file");
         let extension = ["csv","xlsx","xlsm","xlsb","xltx","xltm","xls","xlt","xls","xml","xml","xlam","xla","xlw","xlr"];
         let userExtension = getFileExtension(fileName);
-        for(let i= 1; i <= extension.length; i++)
+        for(let i= 0; i <= extension.length; i++)
         {
-            if(userExtension == extension)
+            if(userExtension == extension[i])
             {
-                viewer.textContent = "Correct " + userExtension;
+                userExtension;
             }else{
-                viewer.textContent = "incorrect "  + userExtension;
+                  userExtension;
             }
         }
+        if(userExtension == null)
+        {
+            viewer.textContent = "Incorrect " + userExtension;
+        }else{
+            viewer.textContent = "Correct " + userExtension;
+        }
+     
     }
     let butt = document.getElementById("submit");
         butt.addEventListener("click",display);
