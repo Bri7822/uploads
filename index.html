@@ -9,13 +9,30 @@
 <body>
     <div class="container">
        <div class="container">
-           <form action="upload.php" method="post" enctype="multipart/form-data">
-               <input type="file" name="file">
-               <input type="file" name="file">
-               <input type="submit" name="submit" value="Upload">
-           </form>
+               <input type="file" id="file">
+               <button type="submit" name="submit" value="">Upload</button>
+               <div class="portrayer"></div>
        </div>
     </div>
-    
+   <script>
+    function display()
+    {
+        let viewer = document.getElementById('portrayer');
+        let fileName = document.getElementById("file").value;
+        let extension = ["csv","xlsx","xlsm","xlsb","xltx","xltm","xls","xlt","xls","xml","xml","xlam","xla","xlw","xlr"];
+        let userExtension = fileName.lastIndexOf('.');
+        for(const userExtension of extension)
+        {
+            if(userExtension == extension)
+            {
+                viewer.textContent("Correct");
+            }else{
+                console.log("Incorrect");
+            }
+        }
+    }
+    let butt = document.getElementById("submit");
+        butt.addEventListener("click",display);
+   </script> 
 </body>
 </html>
