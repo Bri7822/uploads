@@ -18,16 +18,16 @@
     function display()
     {
         let viewer = document.getElementById('portrayer');
-        let fileName = document.getElementById("file").value;
+        let fileName = document.getElementById("file");
         let extension = ["csv","xlsx","xlsm","xlsb","xltx","xltm","xls","xlt","xls","xml","xml","xlam","xla","xlw","xlr"];
         let userExtension = fileName.lastIndexOf('.');
-        for(const userExtension of extension)
+        for(let i= 1; i <= extension.length; i++)
         {
             if(userExtension == extension)
             {
-                viewer.textContent("Correct");
+                viewer.textContent = "Correct";
             }else{
-                console.log("Incorrect");
+                viewer.textContent = "incorrect";
             }
         }
     }
