@@ -15,12 +15,16 @@
        </div>
     </div>
    <script>
+    function getFileExtension(filename)
+    {
+        return filename.split(".").pop().toLowerCase();
+    }
     function display()
     {
         let viewer = document.getElementById('portrayer');
         let fileName = document.getElementById("file").value;
         let extension = ["csv","xlsx","xlsm","xlsb","xltx","xltm","xlt","xls","xla","xlw","xlr"];
-        let userExtension = getFileExtension(fileName.split(".").pop().toLowerCase());
+        let userExtension = getFileExtension(fileName);
         for(let i= 0; i <= extension.length; i++)
         {
             if(userExtension === extension[i])
@@ -30,11 +34,11 @@
                   userExtension;
             }
         }
-        if(userExtension === null)
+        if(extension.includes(userExtension))
         {
-            viewer.textContent = "Incorrect " + userExtension;
-        }else{
             viewer.textContent = "Correct " + userExtension;
+        }else{
+            viewer.textContent = "Incorrect " + userExtension; 
         }
      
     }
