@@ -18,9 +18,9 @@
     function display()
     {
         let viewer = document.getElementById('portrayer');
-        let fileName = document.getElementById("file")[0];
+        let fileName = document.getElementById("file").value;
         let extension = ["csv","xlsx","xlsm","xlsb","xltx","xltm","xlt","xls","xla","xlw","xlr"];
-        let userExtension = getFileExtension(fileName);
+        let userExtension = getFileExtension(fileName.split(".").pop().toLowerCase());
         for(let i= 0; i <= extension.length; i++)
         {
             if(userExtension === extension[i])
@@ -30,7 +30,7 @@
                   userExtension;
             }
         }
-        if(userExtension == null)
+        if(userExtension === null)
         {
             viewer.textContent = "Incorrect " + userExtension;
         }else{
