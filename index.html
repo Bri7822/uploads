@@ -8,23 +8,28 @@
 </head>
 <body>
     <div class="container">
-       <div class="container">
+       <a class="container">
                <input type="file" id="file">
                <button id="submit" name="submit" value="">Upload</button>
+               <a href="http://127.0.0.1:5500/v.html"><button id="submit" name="submit" value="">Next</button></a>
                <div class="" id="portrayer"></div>
        </div>
+        
     </div>
    <script>
     function getFileExtension(filename)
     {
         return filename.split(".").pop().toLowerCase();
     }
+
     function display()
     {
         let viewer = document.getElementById('portrayer');
         let fileName = document.getElementById("file").value;
         let extension = ["csv","xlsx","xlsm","xlsb","xltx","xltm","xlt","xls","xla","xlw","xlr"];
         let userExtension = getFileExtension(fileName);
+        let reader = new FileReader(); // create a new FileReader object
+
         for(let i= 0; i <= extension.length; i++)
         {
             if(userExtension === extension[i])
@@ -36,11 +41,30 @@
         }
         if(extension.includes(userExtension))
         {
-            viewer.textContent = "Correct " + userExtension;
+            input.addEventListener('change',(event) =>{
+               const file = event.target.files[0]
+
+                readXlsx(file).then((rows) => {
+                   console.log(rows)
+                   table.innerHTML = ""
+
+                    rows.forEach((row) => {
+                        const tr = document.createElement('tr');
+                        rows.forEach((cell) => {
+                            const td = document.createElement('td');
+                            td.textContent = cell 
+                            tr.appendChild(td)
+
+                        
+                        })
+                        table.appendChild(tr)
+                    })
+                })
+            })
+              
         }else{
-            viewer.textContent = "Incorrect " + userExtension; 
+               viewer.textContent = "Incorrect " + userExtension; 
         }
-     
     }
     let butt = document.getElementById("submit");
         butt.addEventListener("click",display);
