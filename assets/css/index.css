@@ -18,15 +18,16 @@ form{
       margin-right: 15%;
       
 }
-span {
-      margin-right: -160%;
-}
+
 a{
       text-decoration: none;
 }
 a:last-of-type{
       margin-right: 5px;
 }
-a:hover{
+.sign:hover{
          color: black;
+}
+.fu{
+      margin-left: 30%;
 }
