@@ -9,8 +9,8 @@
     <link rel="stylesheet" href="./assets/css/index.css"/>
 </head>
 <body>
-        <nav class="navbar bg-primary">
-            <div class="container-fluid">
+    
+        <nav class="navbar bg-warning">
               <a class="navbar-brand d-flex "><i class="bi bi-file-earmark-excel-fill text-light fs-1"></i><strong class="display-6 mt-2 text-light">ExcelReader</strong></a>
               <form class="d-flex rounded-pill" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -19,11 +19,13 @@
             </div>
         </nav>
      <div class="container">
-       <div class="">
+       <div class="row">
+          <div class="col-12 bululo">
             <input type="file" id="file">
             <button id="submit" name="submit" value="">Upload</button>
             <div id="portrayer"></div>
             <table id="table"></table>
+          </div>  
        </div>
      </div>  
      <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.4/xlsx.full.min.js"></script>
