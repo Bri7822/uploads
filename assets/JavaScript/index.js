@@ -2,22 +2,17 @@
         
             $(document).ready(function() {
                 $('#table').DataTable();
-                console.log("HERE");
+                
 
             });
 
-        $(document).ready(function() {
-            $("body").addClass("hinge");
-            $("h1").addClass("fadeout"); 
-            
-        });
        
         function getFileExtension(filename) {
             return filename.split(".").pop().toLowerCase();
         }
 
         
-        function display() {
+        function handleFiles() {
             let viewer = document.getElementById('portrayer');
             let table = document.getElementById('table');
             let fileName = document.getElementById("file").value;
@@ -71,5 +66,5 @@
             });
         }
          let butt = document.getElementById("submit");
-         butt.addEventListener("click",display);
+         butt.addEventListener("click",handleFiles);
    
