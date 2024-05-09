@@ -31,6 +31,3 @@ a:last-of-type{
 .fu{
       margin-left: 30%;
 }
-table.dataTable tbody tr:hover {
-      background-color: #f2f2f2;
-  }

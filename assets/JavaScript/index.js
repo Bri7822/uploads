@@ -1,8 +1,12 @@
 
         
             $(document).ready(function() {
-                $('#table').DataTable();
-                $('h1').addClass("animated shake");
+                $('#table').DataTable({
+                paging: true, // Enable pagination
+                searching: false,  // Enable search functionality
+                   ordering: true,
+
+                });
 
             });
 
@@ -28,14 +32,14 @@
                     // Logic to display file contents in a table
                     if (userExtension === 'csv') {
                         const rows = result.split('\n').map(row => row.split(','));
-                        displayTable(rows);
+                        display(rows);
                     } else {
                         // Handle Excel file using SheetJS library
                         const workbook = XLSX.read(result, { type: 'binary' });
                         const sheetName = workbook.SheetNames[0];
                         const sheet = workbook.Sheets[sheetName];
                         const rows = XLSX.utils.sheet_to_json(sheet, { header: 1 });
-                        displayTable(rows);
+                        display(rows);
                     }
                 };
 
@@ -50,7 +54,7 @@
 
         }
 
-        function displayTable(rows) 
+        function display(rows) 
         {
             let table = document.getElementById('table');
             table.innerHTML = "";
