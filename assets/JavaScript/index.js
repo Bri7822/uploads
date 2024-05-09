@@ -11,12 +11,12 @@
             $("h1").addClass("fadeout"); 
             
         });
-        // Function to get file extension
+       
         function getFileExtension(filename) {
             return filename.split(".").pop().toLowerCase();
         }
 
-        // Function to display file contents
+        
         function display() {
             let viewer = document.getElementById('portrayer');
             let table = document.getElementById('table');
@@ -50,12 +50,11 @@
                     reader.readAsBinaryString(file);
                 }
             } else {
-                     viewer.textContent = "Incorrect file '" + userExtension + "' file is given, only EXCEL files are allowed"; 
+                     viewer.textContent = "Incorrect file .'" + userExtension + "' file is given, only EXCEL files are allowed"; 
             }
 
         }
 
-        // Function to display table
         function displayTable(rows) 
         {
             let table = document.getElementById('table');
