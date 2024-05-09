@@ -1,8 +1,5 @@
 body{
-      background-color: rgb(218, 207, 207);
-}
-form{
-       align-content: center;
+      background-color: rgb(247, 240, 240);
 }
 .bululo{
             margin-right: 30px;
@@ -13,11 +10,7 @@ form{
 input{
       background-color: transparent;
 }*/
-form{
-      width: 30%;
-      margin-right: 15%;
-      
-}
+table-primary
 
 a{
       text-decoration: none;
