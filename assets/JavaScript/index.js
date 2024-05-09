@@ -1,7 +1,15 @@
 
+        
+            $(document).ready(function() {
+                $('#table').DataTable();
+                console.log("HERE");
+
+            });
+
         $(document).ready(function() {
             $("body").addClass("hinge");
-            $("h1").addClass("fadeout");
+            $("h1").addClass("fadeout"); 
+            
         });
         // Function to get file extension
         function getFileExtension(filename) {
